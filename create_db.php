@@ -12,15 +12,21 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Create the database if it doesn't exist
-$databaseName = "e_office";
-$sql = "CREATE DATABASE IF NOT EXISTS $databaseName";
+$databaseName = "e_office"; // Or fetch from a trusted source
 
-if (mysqli_query($conn, $sql)) {
-    echo "Database '$databaseName' created or selected successfully.<br>";
+// Validate and sanitize the database name (only alphanumeric and underscores)
+if (preg_match('/^[a-zA-Z0-9_]+$/', $databaseName)) {
+    $sql = "CREATE DATABASE IF NOT EXISTS `$databaseName`";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "Database '$databaseName' created or selected successfully.<br>";
+    } else {
+        echo "Error creating database: " . mysqli_error($conn);
+    }
 } else {
-    echo "Error creating database: " . mysqli_error($conn);
+    echo "Invalid database name.";
 }
+
 
 // Select the created or existing database
 mysqli_select_db($conn, $databaseName);
