@@ -39,9 +39,9 @@ if (isset($_GET['id'])) {
 }
 
 
-// Check if form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get the updated values from the form
+if (isset($_POST['submit'])) {
+    // Collect and sanitize inputs as needed
+    $guide_id = $_POST['id']; // make sure it's from a trusted source
     $full_name = $_POST['full_name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -52,27 +52,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $experience = $_POST['experience'];
     $specialties = $_POST['specialties'];
 
-    // Update the database with the new details
-    $update_query = "UPDATE park_guides 
-                     SET full_name = '$full_name', 
-                         username = '$username', 
-                         email = '$email', 
-                         phone = '$phone', 
-                         dob = '$dob', 
-                         employment_date = '$employment_date', 
-                         languages = '$languages', 
-                         experience = '$experience', 
-                         specialties = '$specialties'
-                     WHERE id = $guide_id";
+    // Use a prepared statement
+    $stmt = $conn->prepare("UPDATE park_guides 
+                            SET full_name = ?, 
+                                username = ?, 
+                                email = ?, 
+                                phone = ?, 
+                                dob = ?, 
+                                employment_date = ?, 
+                                languages = ?, 
+                                experience = ?, 
+                                specialties = ?
+                            WHERE id = ?");
     
-    if ($conn->query($update_query) === TRUE) {
+    $stmt->bind_param("sssssssssi", 
+                      $full_name, $username, $email, $phone, $dob, 
+                      $employment_date, $languages, $experience, $specialties, $guide_id);
+    
+    if ($stmt->execute()) {
         echo "Park guide details updated successfully.";
-        header('Location: displayUserFeedback.php'); // Redirect back to the list of guides
+        header('Location: displayUserFeedback.php');
+        exit;
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . $stmt->error;
     }
+
+    $stmt->close();
 }
-?>
+
 
 <!-- HTML Form for editing park guide details -->
 <!DOCTYPE html>
