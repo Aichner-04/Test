@@ -16,9 +16,12 @@ if ($conn->connect_error) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Fetch the current training session data from the database
-    $query = "SELECT * FROM training_sessions WHERE id = $id";
-    $result = $conn->query($query);
+    // Prepare the query using a parameterized statement
+    $stmt = $conn->prepare("SELECT * FROM training_sessions WHERE id = ?");
+    $stmt->bind_param("i", $id); // "i" for integer
+    $stmt->execute();
+
+    $result = $stmt->get_result();
 
     // Check if the record exists
     if ($result->num_rows > 0) {
@@ -27,7 +30,13 @@ if (isset($_GET['id'])) {
         echo "Training session not found.";
         exit;
     }
+
+    $stmt->close();
+} else {
+    echo "ID not provided.";
+    exit;
 }
+
 
 // Update the training session if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
