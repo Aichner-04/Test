@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register ParkGuide</title>
+  <link rel="stylesheet" href="style3.css" />
+  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
+  <script defer src="register.js"></script>
+</head>
+<body>
+  <div class="signup-page">
+    <div class="container">
+      <div class="branding">
+        <h1>🛡️ Admin Panel</h1>
+        <p>Register new ParkGuide users securely</p>
+      </div>
+      <div class="form-container">
+        <h2>Register User</h2>
+        <form id="registerForm">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="newuser@parkguide.com" />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Create password" />
+
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" required placeholder="Repeat password" />
+
+          <label for="role">Select Role</label>
+          <select id="role" required>
+            <option value="">-- Select Role --</option>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <button type="submit">Register</button>
+          <p id="message"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

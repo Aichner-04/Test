@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orangutan Feeding Updates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+                <img class="logo" src="images/SFC_logo.jpg" alt="Sarawak Forestry Logo">
+              </a>
+            <nav class="desktop-nav">
+                <ul class="menu">
+                    <li><a href="userHomepage.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-globe"></i> Online Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="adminLogin.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E‑Office</a></l>
+                          <li><a href="e-booking.html" ><i class="fas fa-chevron-right"></i> E‑Booking</a></li>                          
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map"></i> Explore <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+                            <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+                            <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-calendar"></i> Program <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+                            <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-paw"></i> Wildlife <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+                            <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar">
+    <div class="sidebar-header">
+        <img src="images/SFC_logo.jpg" alt="Logo" class="logo">
+        <span class="brand-name">Semenggoh Wildlife</span>
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search...">
+    </div>
+    
+    <ul class="sidebar-menu">
+        <li class="sidebar-item active">
+            <a href="userHomepage.html"><i class="fas fa-home"></i> <span>Home</span></a>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-globe"></i> <span>Online Services</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="e-office.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E-Office</a></li>
+                <li><a href="e-booking.html"><i class="fas fa-chevron-right"></i> E-booking</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-map"></i> <span>Explore</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+                <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+                <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-calendar"></i> <span>Program</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+                <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-paw"></i> <span>Wildlife</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+                <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i> Dark Mode
+        </div>
+    </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="feeding-main-content">
+        <!-- Feeding Day 1 -->
+        <section class="feeding-day">
+            <h3 class="date">Date: 20/9/2024 (Fri)</h3>
+            
+            <div class="feeding-schedule">
+                <div class="feeding-time">
+                    <h4><i class="fas fa-sun"></i> Morning</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main Feeding</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Analisa (28,F)</li>
+                                <li><i class="fas fa-monkey"></i> Mas (8,M)</li>
+                                <li><i class="fas fa-baby"></i> Baby Analisa (2,Ukw)</li>
+                                <li><i class="fas fa-monkey"></i> Anaku (18,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Jubilee (11,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>5 (3 male, 1 female)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feeding-time">
+                    <h4><i class="fas fa-cloud-sun"></i> Afternoon</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main feeding</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Anaku (18,M)</li>
+                                <li><i class="fas fa-monkey"></i> Annuar (26,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Saddamiah (22,F)</li>
+                                <li><i class="fas fa-monkey"></i> Sigat (6,M)</li>
+                                <li><i class="fas fa-baby"></i> Shitanji (1,Unk)</li>
+                                <li><i class="fas fa-monkey"></i> Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>6 (3 male, 2 female)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feeding Day 2 -->
+        <section class="feeding-day">
+            <h3 class="date">Date: 21/9/2024 (Sat)</h3>
+            
+            <div class="feeding-schedule">
+                <div class="feeding-time">
+                    <h4><i class="fas fa-sun"></i> Morning</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main Feeding</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Mas (8,M)</li>
+                                <li><i class="fas fa-monkey"></i> Anaku (18,M)</li>
+                                <li><i class="fas fa-monkey"></i> Minah (35,F)</li>
+                                <li><i class="fas fa-monkey"></i> Ooooha (5,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Jubilee (11,M)</li>
+                                <li><i class="fas fa-monkey"></i> Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>6 (4 male, 2 female)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feeding-time">
+                    <h4><i class="fas fa-cloud-sun"></i> Afternoon</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main feeding</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Analisa (28,F)</li>
+                                <li><i class="fas fa-monkey"></i> Mas (8,M)</li>
+                                <li><i class="fas fa-baby"></i> Baby Analisa (2,Unk)</li>
+                                <li><i class="fas fa-monkey"></i> Ruby (11,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li><i class="fas fa-monkey"></i> Anaku (18,M)</li>
+                                <li><i class="fas fa-monkey"></i> Ganya (16,M)</li>
+                                <li><i class="fas fa-monkey"></i> Minah (35,F)</li>
+                                <li><i class="fas fa-monkey"></i> Ooooha (5,M)</li>
+                                <li><i class="fas fa-monkey"></i> Annuar (26,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>9 (5 male, 3 female)</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feeding Day 3 -->
+        <section class="feeding-day">
+            <h3 class="date">Date: 22/9/2024 (Sun)</h3>
+            
+            <div class="feeding-schedule">
+                <div class="feeding-time">
+                    <h4>Morning</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main Feeding</h5>
+                            <ul>
+                                <li>Mas (8,M)</li>
+                                <li>Anaku (18,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Minah (35,F)</li>
+                                <li>Ooooha (5,M)</li>
+                                <li>Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>sIGAT</h5>
+                            <p>5 (3 male, 2 female)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feeding-time">
+                    <h4>Afternoon</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main feeding</h5>
+                            <ul>
+                                <li>NIL</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Ganya (16,M)</li>
+                                <li>Saddamiah (22,F)</li>
+                                <li>Shitanji (1,Unk)</li>
+                                <li>Sigat (6,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>4 (2 male, 1 female)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feeding Day 4 -->
+        <section class="feeding-day">
+            <h3 class="date">Date: 23/9/2024 (Mon)</h3>
+            
+            <div class="feeding-schedule">
+                <div class="feeding-time">
+                    <h4>Morning</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main Feeding</h5>
+                            <ul>
+                                <li>Mas (8,M)</li>
+                                <li>Anaku (18,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Minah (35,F)</li>
+                                <li>Ooooha (5,M)</li>
+                                <li>Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>sIGAT</h5>
+                            <p>5 (3 male, 2 female)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feeding-time">
+                    <h4>Afternoon</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main feeding</h5>
+                            <ul>
+                                <li>Mas (8,M)</li>
+                                <li>Ruby (11,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Ganya (16,M)</li>
+                                <li>Saddamiah (22,F)</li>
+                                <li>Shitanji (1,Unk)</li>
+                                <li>Sigat (6,M)</li>
+                                <li>Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>7 (3 male, 3 female)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <!-- Feeding Day 4 -->
+        <section class="feeding-day">
+            <h3 class="date">Date: 23/9/2024 (Mon)</h3>
+            
+            <div class="feeding-schedule">
+                <div class="feeding-time">
+                    <h4>Morning</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main Feeding</h5>
+                            <ul>
+                                <li>Mas (8,M)</li>
+                                <li>Anaku (18,M)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Minah (35,F)</li>
+                                <li>Ooooha (5,M)</li>
+                                <li>Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>sIGAT</h5>
+                            <p>5 (3 male, 2 female)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feeding-time">
+                    <h4>Afternoon</h4>
+                    <div class="feeding-data">
+                        <div class="feeding-location">
+                            <h5>Main feeding</h5>
+                            <ul>
+                                <li>Mas (8,M)</li>
+                                <li>Ruby (11,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-location">
+                            <h5>Feeding platform 1/2/3</h5>
+                            <ul>
+                                <li>Ganya (16,M)</li>
+                                <li>Saddamiah (22,F)</li>
+                                <li>Shitanji (1,Unk)</li>
+                                <li>Sigat (6,M)</li>
+                                <li>Seduku (53,F)</li>
+                            </ul>
+                        </div>
+                        <div class="feeding-count">
+                            <h5>Total</h5>
+                            <p>7 (3 male, 3 female)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Feeding Day 5 -->
+       <section class="feeding-day">
+        <h3 class="date">Date: 24/9/2024 (Tue)</h3>
+        
+        <div class="feeding-schedule">
+            <div class="feeding-time">
+                <h4>Morning</h4>
+                <div class="feeding-data">
+                    <div class="feeding-location">
+                        <h5>Main Feeding</h5>
+                        <ul>
+                            <li>Nil</li>
+                        </ul>
+                    </div>
+                    <div class="feeding-location">
+                        <h5>Feeding platform 1/2/3</h5>
+                        <ul>
+                            <li>Ganya (16,M)</li>
+                            <li>Seduku (53,F)</li>
+                        </ul>
+                    </div>
+                    <div class="feeding-count">
+                        <h5>sIGAT</h5>
+                        <p>2 (1 male, 1 female)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feeding-time">
+                <h4>Afternoon</h4>
+                <div class="feeding-data">
+                    <div class="feeding-location">
+                        <h5>Main feeding</h5>
+                        <ul>
+                            <li>Mas (8,M)</li>
+                            <li>Ruby (11,F)</li>
+                            <li>Anaku (18,M)</li>
+                        </ul>
+                    </div>
+                    <div class="feeding-location">
+                        <h5>Feeding platform 1/2/3</h5>
+                        <ul>
+                            <li>Seduku (53,F)</li>
+                            <li>Minah (35,F)</li>
+                            <li>Ooooha (5,M)</li>
+                            <li>Annuar(26,M)</li>
+                            <li>Selina(20,F)</li>
+                            <li>Sem (8,M)</li>
+                            <li>Baby Selina (2,Unk)</li>
+                        </ul>
+                    </div>
+                    <div class="feeding-count">
+                        <h5>Total</h5>
+                        <p>10 (5 male, 4 female)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script src="scripts2.js"></script>
+</body>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section contact-info">
+        <h3>CORPORATE OFFICE KUCHING</h3>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span><strong>Address:</strong> Lot 218, KCLD, Jalan Tapang, Kota Sentosa, 93250 Kuching, Sarawak, Malaysia</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <span><strong>Phone:</strong> (+6) 082-610088</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-fax"></i>
+          <span><strong>Fax:</strong> (+6) 082-610099</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-volume"></i>
+          <span><strong>Toll-Free:</strong> 1800-88-2526</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <span><strong>Email:</strong> info@sarawakforestry.com</span>
+        </div>
+      </div>
+      <div class="footer-section hours-info">
+        <h3>OPERATING HOURS</h3>
+        <div class="hours-container">
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-day"></i> <strong>Monday-Thursday:</strong></div>
+            <div class="time">8:00am - 1:00pm & 2:00pm - 5:00pm</div>
+          </div>
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-day"></i> <strong>Friday:</strong></div>
+            <div class="time">8:00am - 11:45am & 2:15pm - 5:00pm</div>
+          </div>
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-week"></i> <strong>Saturday, Sunday & Public Holiday:</strong></div>
+            <div class="time">Counter closed</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section quick-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+            <li><a href="aboutUs.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Protected Areas</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Centers</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social-connect">
+        <h3>CONNECT WITH US</h3>
+        <p>Stay updated with our latest news and announcements</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sarawak Forestry Corporation. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</html>

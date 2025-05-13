@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Park Guide Registration Form</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+
+<body class="park-guide-sign-up-form">
+  <div class="park-guide-sign-up-form-container">
+    <h1 class="park-guide-sign-up-form-header">Park Guide Registration Form</h1>
+
+    <form action="submitguide.php" method="POST">
+      <h2>Basic Information</h2>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="full_name">Full Name:</label>
+        <input type="text" name="full_name" id="full_name" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="username">Username (for login):</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" name="phone" id="phone" required pattern="[0-9]{3}-[0-9]{7}" placeholder="012-345678" title="Phone number must be in the format 012-345678">
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="email">Email Address (for login):</label>
+        <input type="email" name="email" id="email" required placeholder="example@email.com" title="Enter a valid email address with '@'">
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" id="dob">
+      </div>
+
+      <!-- Professional Details -->
+      <h2>Professional Details</h2>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="employment_date">Date of Employment:</label>
+        <input type="date" name="employment_date" id="employment_date" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label>Languages Spoken:</label>
+        <div class="park-guide-sign-up-form-checkbox-group">
+          <label><input type="checkbox" name="languages[]" value="English"> English</label>
+          <label><input type="checkbox" name="languages[]" value="Malay"> Malay</label>
+          <label><input type="checkbox" name="languages[]" value="Chinese"> Chinese</label>
+          <label>
+            <input type="checkbox" name="languages[]" value="Other" id="myCheckbox"> Other
+            <input type="text" name="languages[]" id="myTextbox" style="display: none;">
+          </label>
+        </div>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="experience">Experience (in years):</label>
+        <input type="number" name="experience" id="experience" min="0" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="specialties">Specialties / Expertise:</label>
+        <textarea name="specialties" id="specialties" rows="3" placeholder="e.g. Botany, Wildlife Tracking"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <script src="registerParkGuide.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Certification and License Assignment/Renewal Form</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+
+<body class="park-guide-sign-up-form">
+  <div class="park-guide-sign-up-form-container">
+    <h1 class="park-guide-sign-up-form-header">Certification and License Assignment / Renewal Form</h1>
+
+    <form action="submit_cert.php" method="POST" enctype="multipart/form-data">
+      <div class="park-guide-sign-up-form-group">
+        <label for="full_name">Full Name:</label>
+        <input type="text" name="full_name" id="full_name" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" name="email" id="email" required placeholder="example@email.com" title="Enter a valid email address with '@'">
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="test_marks">Test Marks:</label>
+        <input type="text" name="test_marks" id="test_marks" required>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="certifications">List of Certifications:</label>
+        <textarea name="certifications" id="certifications" rows="3" placeholder="e.g. First Aid, Wilderness Survival, Eco-Tourism"></textarea>
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="cert_files">Upload Certification Documents:</label>
+        <input type="file" name="cert_files[]" id="cert_files" multiple accept=".pdf,.jpg,.jpeg,.png">
+      </div>
+
+      <div class="park-guide-sign-up-form-group">
+        <label for="cert_expiry">Certification Expiry Date(s):</label>
+        <input type="date" name="cert_expiry[]" multiple>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

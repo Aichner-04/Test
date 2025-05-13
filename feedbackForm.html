@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Park Guide Feedback Form</title>
+  <link rel="stylesheet" href="style3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head>
+<body class="feedback-page">
+  <form class="feedback-form" action="submitfeedback.php" method="POST">
+    <h2>Park Guide Feedback</h2>
+    <label for="guideName">Park Guide Name:</label>
+    <div class="input-container">
+      <i class="fas fa-user"></i>
+      <input type="text" id="guideName" name="guideName" placeholder="Enter name..." required>
+    </div>
+
+    <label for="engRating">Language Skill - English:</label>
+    <div class="rating-group">
+      <span>Rate:</span>
+      <input type="number" id="engRating" name="engRating" min="1" max="5" required>
+      <div class="stars" id="engStars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+    </div>
+
+    <label for="bmRating">Language Skill - Malay:</label>
+    <div class="rating-group">
+      <span>Rate:</span>
+      <input type="number" id="bmRating" name="bmRating" min="1" max="5" required>
+      <div class="stars" id="engStars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+    </div>
+
+    <label for="chiRating">Language Skill - Chinese:</label>
+    <div class="rating-group">
+      <span>Rate:</span>
+      <input type="number" id="chiRating" name="chiRating" min="1" max="5" required>
+      <div class="stars" id="chiStars">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+    </div>
+
+    <label for="knowledgeFeedback">Overall Basic Knowledge:</label>
+    <div class="input-container">
+      <textarea id="knowledgeFeedback" name="knowledgeFeedback" rows="4" placeholder="Enter your feedback here..." required></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Feedback</button>
+  </form>
+  <script src="scripts2.js"></script>
+</body>
+</html>

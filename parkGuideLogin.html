@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Login</title>
+  <link rel="stylesheet" href="style3.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <main class="e-licensing-container">
+    <div class="licensing-header">
+      <h1 class="title">E-Licensing Portal</h1>
+      <p>Access and manage your forestry licenses online with our secure platform</p>
+    </div>
+    
+    <div class="licensing-card">
+      <div class="card-header">
+        <i class="fas fa-lock"></i>
+        <h2>User Login</h2>
+      </div>
+      <div class="card-body">
+        <form class="login-form" id="loginForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" placeholder="Enter your email" required />
+            <span class="form-icon"><i class="fas fa-user"></i></span>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password" required />
+            <span class="form-icon"><i class="fas fa-lock"></i></span>
+          </div>
+
+          <div class="captcha-container">
+            <div class="captcha-box">
+              <div class="captcha-text" id="captchaText">S4R4W4K</div>
+            </div>
+            <button type="button" class="captcha-refresh" id="refreshCaptcha" title="Refresh Captcha">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+            <div class="robot-check">
+              <label class="custom-checkbox">
+                <span>I'm not a robot</span>
+                <input type="checkbox" id="captchaCheck" required />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-login" id="loginBtn">
+            Login <span class="spinner"><i class="fas fa-circle-notch fa-spin"></i></span>
+          </button>
+
+          <div class="form-links">
+            <a href="adminLogin.html">Login as Admin</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>  
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      login(email, password);
+    });
+  </script>
+</body>
+</html>

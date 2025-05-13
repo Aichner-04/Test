@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semenggoh Entrance Fee</title>
+  <link rel="stylesheet" href="style3.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+        <div class="mobile-nav-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+            <img class="logo" src="images/SFC_logo.jpg" alt="Sarawak Forestry Logo">
+          </a>
+        <nav class="desktop-nav">
+            <ul class="menu">
+                <li><a href="userHomepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-globe"></i> Online Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="adminLogin.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E‑Office</a></li>                     
+                      <li><a href="e-booking.html" ><i class="fas fa-chevron-right"></i> E‑Booking</a></li>                          
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-map"></i> Explore <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+                        <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+                        <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-calendar"></i> Program <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+                        <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-paw"></i> Wildlife <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+                        <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Mobile Sidebar -->
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+<div class="sidebar-header">
+    <img src="images/SFC_logo.jpg" alt="Logo" class="logo">
+    <span class="brand-name">Semenggoh Wildlife</span>
+    <button class="close-sidebar"><i class="fas fa-times"></i></button>
+</div>
+
+<div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search...">
+</div>
+
+<ul class="sidebar-menu">
+    <li class="sidebar-item active">
+        <a href="userHomepage.html"><i class="fas fa-home"></i> <span>Home</span></a>
+    </li>
+    <li class="sidebar-item dropdown">
+        <a href="#"><i class="fas fa-globe"></i> <span>Online Services</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="e-office.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E-Office</a></li>
+            <li><a href="e-booking.html"><i class="fas fa-chevron-right"></i> E-booking</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item dropdown">
+        <a href="#"><i class="fas fa-map"></i> <span>Explore</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+            <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+            <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item dropdown">
+        <a href="#"><i class="fas fa-calendar"></i> <span>Program</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+            <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+        </ul>
+    </li>
+    <li class="sidebar-item dropdown">
+        <a href="#"><i class="fas fa-paw"></i> <span>Wildlife</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+        <ul class="dropdown-menu">
+            <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+            <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+        </ul>
+    </li>
+</ul>
+<div class="sidebar-footer">
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i> Dark Mode
+    </div>
+</div>
+</aside>
+
+<!-- Main Content -->
+<main>
+  <h2>Entrance Fee</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Foreigner - Adult/Senior Citizen</th>
+        <th>Foreigner - Disabled Person</th>
+        <th>Foreigner - Children (6-18 years)</th>
+        <th>Foreigner - Children (Below 6 years)</th>
+        <th>Local - Adult</th>
+        <th>Local - Senior Citizen/Disabled</th>
+        <th>Local - Children (6-18 years)</th>
+        <th>Local - Children (Below 6 years)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>World Heritage Site (5-day pass) – Gunong Mulu National Park</td>
+        <td>30.00</td>
+        <td>15.00</td>
+        <td>10.00</td>
+        <td>Free</td>
+        <td>15.00</td>
+        <td>7.00</td>
+        <td>5.00</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <td>National Parks</td>
+        <td>20.00</td>
+        <td>10.00</td>
+        <td>7.00</td>
+        <td>Free</td>
+        <td>10.00</td>
+        <td>5.00</td>
+        <td>3.00</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <td>Semenggoh Nature Reserve</td>
+        <td>10.00</td>
+        <td>5.00</td>
+        <td>5.00</td>
+        <td>Free</td>
+        <td>5.00</td>
+        <td>3.00</td>
+        <td>2.00</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <td>Other Nature Reserves</td>
+        <td>5.00</td>
+        <td>3.00</td>
+        <td>2.00</td>
+        <td>Free</td>
+        <td>1.00</td>
+        <td>Free</td>
+        <td>Free</td>
+        <td>Free</td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section contact-info">
+      <h3>CORPORATE OFFICE KUCHING</h3>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span><strong>Address:</strong> Lot 218, KCLD, Jalan Tapang, Kota Sentosa, 93250 Kuching, Sarawak, Malaysia</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <span><strong>Phone:</strong> (+6) 082-610088</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-fax"></i>
+        <span><strong>Fax:</strong> (+6) 082-610099</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-volume"></i>
+        <span><strong>Toll-Free:</strong> 1800-88-2526</span>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <span><strong>Email:</strong> info@sarawakforestry.com</span>
+      </div>
+    </div>
+    <div class="footer-section hours-info">
+      <h3>OPERATING HOURS</h3>
+      <div class="hours-container">
+        <div class="hours-item">
+          <div class="day"><i class="fas fa-calendar-day"></i> <strong>Monday-Thursday:</strong></div>
+          <div class="time">8:00am - 1:00pm & 2:00pm - 5:00pm</div>
+        </div>
+        <div class="hours-item">
+          <div class="day"><i class="fas fa-calendar-day"></i> <strong>Friday:</strong></div>
+          <div class="time">8:00am - 11:45am & 2:15pm - 5:00pm</div>
+        </div>
+        <div class="hours-item">
+          <div class="day"><i class="fas fa-calendar-week"></i> <strong>Saturday, Sunday & Public Holiday:</strong></div>
+          <div class="time">Counter closed</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-section quick-links">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="aboutUs.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Protected Areas</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Centers</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-section social-connect">
+      <h3>CONNECT WITH US</h3>
+      <p>Stay updated with our latest news and announcements</p>
+      <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sarawak Forestry Corporation. All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="scripts2.js"></script>
+</body>
+</html>

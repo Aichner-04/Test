@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-booking</title>
+    <link rel="stylesheet" href="style3.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+                <img class="logo" src="images/SFC_logo.jpg" alt="Sarawak Forestry Logo">
+              </a>
+            <nav class="desktop-nav">
+                <ul class="menu">
+                    <li><a href="userHomepage.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-globe"></i> Online Services <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="adminLogin.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E‑Office</a></li>
+                          <li><a href="e-booking.html" ><i class="fas fa-chevron-right"></i> E‑Booking</a></li>                          
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-map"></i> Explore <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+                            <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+                            <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-calendar"></i> Program <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+                            <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-paw"></i> Wildlife <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+                            <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Mobile Sidebar -->
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar">
+    <div class="sidebar-header">
+        <img src="images/SFC_logo.jpg" alt="Logo" class="logo">
+        <span class="brand-name">Semenggoh Wildlife</span>
+        <button class="close-sidebar"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search...">
+    </div>
+    
+    <ul class="sidebar-menu">
+        <li class="sidebar-item active">
+            <a href="userHomepage.html"><i class="fas fa-home"></i> <span>Home</span></a>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-globe"></i> <span>Online Services</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="e-office.html" target="_blank" rel="noopener"><i class="fas fa-chevron-right"></i> E-Office</a></li>
+                <li><a href="e-booking.html"><i class="fas fa-chevron-right"></i> E-booking</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-map"></i> <span>Explore</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="map.html"><i class="fas fa-chevron-right"></i> Map & Video</a></li>
+                <li><a href="entranceFee.html"><i class="fas fa-chevron-right"></i> Entrance Fee</a></li>
+                <li><a href="accommodation.html"><i class="fas fa-chevron-right"></i> Accommodation</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-calendar"></i> <span>Program</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="orangUtanShow.html"><i class="fas fa-chevron-right"></i> Orangutan Shows</a></li>
+                <li><a href="visitingAndFeeding.html"><i class="fas fa-chevron-right"></i> Visiting & Feeding Time</a></li>
+            </ul>
+        </li>
+        <li class="sidebar-item dropdown">
+            <a href="#"><i class="fas fa-paw"></i> <span>Wildlife</span> <i class="fas fa-chevron-down dropdown-icon"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="animal.html"><i class="fas fa-chevron-right"></i> Protected Wildlife</a></li>
+                <li><a href="plant.html"><i class="fas fa-chevron-right"></i> Protected Plants</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i> Dark Mode
+        </div>
+    </div>
+    </aside>
+
+<div class="park-guides-container">
+    <div class="park-guides-wrapper">
+        <h1 class="park-guides-title">LIST OF NEW LICENSED PARK GUIDES</h1>
+        
+        <p class="park-guides-subtitle">Park Guides</p>
+        
+        <div class="park-guides-parks">
+            Semenggoh Wildlife Centre
+        </div>
+        
+        <table class="park-guides-table">
+            <thead>
+                <tr>
+                    <th>NO</th>
+                    <th>NAME</th>
+                    <th>OPERATING HOURS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>WEE KEE KLAT (Alex)</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>LUCIAN ENG HIANG</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>KHO MUN LU (Lulu)</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>TEDDY BUNGA NANGOI ANAK ROBERT DAIS</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>KHO MUN ING (Nina)</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>LIM ZING (Kent)</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>JULIAN GOH EK</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>JOHAN ROSLAN @ JOHN ROLAND TUTON</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>NICOLE BIRGIT NEUNER</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>ANUAR BIN REDUAN@ LESLIE BIN REDUAN</td>
+                    <td class="park-guides-hours">Monday-Thursday: 8:00am - 1:00pm & 2:00pm - 5:00pm<br>
+                    Friday: 8:00am - 11:45am & 2:15pm - 5:00pm<br></td>
+                </tr>
+                <!-- Additional rows can be added here following the same pattern -->
+                <!-- Continue to row 42 with the same structure -->
+            </tbody>
+        </table>
+        <p class="park-guides-note">Note: All park guides follow the same operating hours as shown above.</p>
+        </div>
+    </div>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section contact-info">
+        <h3>CORPORATE OFFICE KUCHING</h3>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span><strong>Address:</strong> Lot 218, KCLD, Jalan Tapang, Kota Sentosa, 93250 Kuching, Sarawak, Malaysia</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <span><strong>Phone:</strong> (+6) 082-610088</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-fax"></i>
+          <span><strong>Fax:</strong> (+6) 082-610099</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-volume"></i>
+          <span><strong>Toll-Free:</strong> 1800-88-2526</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <span><strong>Email:</strong> info@sarawakforestry.com</span>
+        </div>
+      </div>
+      <div class="footer-section hours-info">
+        <h3>OPERATING HOURS</h3>
+        <div class="hours-container">
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-day"></i> <strong>Monday-Thursday:</strong></div>
+            <div class="time">8:00am - 1:00pm & 2:00pm - 5:00pm</div>
+          </div>
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-day"></i> <strong>Friday:</strong></div>
+            <div class="time">8:00am - 11:45am & 2:15pm - 5:00pm</div>
+          </div>
+          <div class="hours-item">
+            <div class="day"><i class="fas fa-calendar-week"></i> <strong>Saturday, Sunday & Public Holiday:</strong></div>
+            <div class="time">Counter closed</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-section quick-links">
+        <h3>QUICK LINKS</h3>
+        <ul>
+        <li><a href="aboutUs.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Our Services</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Protected Areas</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Wildlife Centers</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social-connect">
+        <h3>CONNECT WITH US</h3>
+        <p>Stay updated with our latest news and announcements</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Sarawak Forestry Corporation. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts2.js"></script>
+</body>
+</html>
