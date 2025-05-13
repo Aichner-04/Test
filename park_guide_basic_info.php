@@ -24,16 +24,25 @@ if (isset($_GET['toggle_status']) && isset($_GET['id']) && isset($_GET['status']
   // Toggle the status
   $new_status = ($current_status == 'active') ? 'inactive' : 'active';
 
-  // Update status in the database
-  $update_sql = "UPDATE park_guides SET status='$new_status' WHERE id=$guide_id";
-  if ($conn->query($update_sql) === TRUE) {
-    // Redirect after successful update to avoid re-execution
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit();
-  } else {
-      echo "Error updating record: " . $conn->error;
-  }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $guide_id = $_POST['id'];
+    $new_status = $_POST['status'];
+
+    // Use a prepared statement to prevent SQL Injection
+    $stmt = $conn->prepare("UPDATE park_guides SET status = ? WHERE id = ?");
+    $stmt->bind_param("si", $new_status, $guide_id); // "s" for string, "i" for integer
+
+    if ($stmt->execute()) {
+        // Redirect after successful update
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo "Error updating record: " . $stmt->error;
+    }
+
+    $stmt->close();
 }
+
 
 ?>
 
