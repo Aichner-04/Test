@@ -9,27 +9,43 @@ $conn = mysqli_connect($servername, $username, $password);
 
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    error_log("Connection failed: " . mysqli_connect_error()); // Log error
+    die("Connection failed: Unable to connect to the database.");
 }
 
-$databaseName = "e_office"; // Or fetch from a trusted source
+// Sanitize the database name to ensure it only contains alphanumeric characters and underscores
+$databaseName = "e_office"; // Hardcoded for simplicity, sanitize dynamically if needed
+if (!preg_match('/^[a-zA-Z0-9_]+$/', $databaseName)) {
+    error_log("Invalid database name provided.");
+    die("Invalid database name.");
+}
 
-// Validate and sanitize the database name (only alphanumeric and underscores)
-if (preg_match('/^[a-zA-Z0-9_]+$/', $databaseName)) {
-    $sql = "CREATE DATABASE IF NOT EXISTS `$databaseName`";
+// Create the database if it doesn't exist
+$sql = "CREATE DATABASE IF NOT EXISTS `$databaseName`";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "Database '$databaseName' created or selected successfully.<br>";
-    } else {
-        echo "Error creating database: " . mysqli_error($conn);
-    }
+if (mysqli_query($conn, $sql)) {
+    echo "Database '$databaseName' created or selected successfully.<br>";
 } else {
-    echo "Invalid database name.";
+    // Log the error and provide a generic error message
+    error_log("Error creating database: " . mysqli_error($conn));
+    echo "Error creating database. Please try again later.";
 }
-
 
 // Select the created or existing database
-mysqli_select_db($conn, $databaseName);
+if (!mysqli_select_db($conn, $databaseName)) {
+    error_log("Error selecting database: " . mysqli_error($conn));
+    die("Error selecting the database.");
+}
+
+// Helper function to handle query execution and error logging
+function executeQuery($conn, $sql) {
+    if (mysqli_query($conn, $sql)) {
+        return true;
+    } else {
+        error_log("SQL error: " . mysqli_error($conn) . " Query: $sql");
+        return false;
+    }
+}
 
 // Create the `user_feedback` table
 $sql = "CREATE TABLE IF NOT EXISTS user_feedback (
@@ -41,11 +57,10 @@ $sql = "CREATE TABLE IF NOT EXISTS user_feedback (
     knowledge_feedback TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'user_feedback' created successfully.<br>";
 } else {
-    echo "Error creating table 'user_feedback': " . mysqli_error($conn);
+    echo "Error creating table 'user_feedback'. Please try again later.<br>";
 }
 
 // Create the `users` table
@@ -57,11 +72,10 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'users' created successfully.<br>";
 } else {
-    echo "Error creating table 'users': " . mysqli_error($conn);
+    echo "Error creating table 'users'. Please try again later.<br>";
 }
 
 // Create the `training_sessions` table
@@ -72,11 +86,10 @@ $sql = "CREATE TABLE IF NOT EXISTS training_sessions (
     training_status VARCHAR(20) NOT NULL,
     training_title VARCHAR(255) DEFAULT NULL
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'training_sessions' created successfully.<br>";
 } else {
-    echo "Error creating table 'training_sessions': " . mysqli_error($conn);
+    echo "Error creating table 'training_sessions'. Please try again later.<br>";
 }
 
 // Create the `park_guides` table
@@ -94,11 +107,10 @@ $sql = "CREATE TABLE IF NOT EXISTS park_guides (
     specialties TEXT DEFAULT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'park_guides' created successfully.<br>";
 } else {
-    echo "Error creating table 'park_guides': " . mysqli_error($conn);
+    echo "Error creating table 'park_guides'. Please try again later.<br>";
 }
 
 // Create the `notifications` table
@@ -110,11 +122,10 @@ $sql = "CREATE TABLE IF NOT EXISTS notifications (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'notifications' created successfully.<br>";
 } else {
-    echo "Error creating table 'notifications': " . mysqli_error($conn);
+    echo "Error creating table 'notifications'. Please try again later.<br>";
 }
 
 // Create the `guide_courses` table
@@ -123,11 +134,10 @@ $sql = "CREATE TABLE IF NOT EXISTS guide_courses (
     username VARCHAR(255) DEFAULT NULL,
     course_id INT(11) DEFAULT NULL
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'guide_courses' created successfully.<br>";
 } else {
-    echo "Error creating table 'guide_courses': " . mysqli_error($conn);
+    echo "Error creating table 'guide_courses'. Please try again later.<br>";
 }
 
 // Create the `guide_certifications` table
@@ -141,11 +151,10 @@ $sql = "CREATE TABLE IF NOT EXISTS guide_certifications (
     cert_files VARCHAR(255) DEFAULT NULL,
     submission_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'guide_certifications' created successfully.<br>";
 } else {
-    echo "Error creating table 'guide_certifications': " . mysqli_error($conn);
+    echo "Error creating table 'guide_certifications'. Please try again later.<br>";
 }
 
 // Create the `courses` table
@@ -154,11 +163,10 @@ $sql = "CREATE TABLE IF NOT EXISTS courses (
     course_name VARCHAR(255) NOT NULL,
     course_description TEXT NOT NULL
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'courses' created successfully.<br>";
 } else {
-    echo "Error creating table 'courses': " . mysqli_error($conn);
+    echo "Error creating table 'courses'. Please try again later.<br>";
 }
 
 // Insert the courses values
@@ -179,19 +187,28 @@ $courses = [
     ["First Aid Training", "This course covers basic first aid skills, teaching guides how to assist injured individuals."]
 ];
 
-// Insert each course into the database
+// Prepare the insert query once
+$stmt = mysqli_prepare($conn, "INSERT INTO courses (course_name, course_description) VALUES (?, ?)");
+
 foreach ($courses as $course) {
+    // Bind the parameters
+    mysqli_stmt_bind_param($stmt, "ss", $course_name, $course_description);
+    
+    // Assign values
     $course_name = $course[0];
     $course_description = $course[1];
 
-    $sql = "INSERT INTO courses (course_name, course_description) VALUES ('$course_name', '$course_description')";
-
-    if (mysqli_query($conn, $sql)) {
+    // Execute the query and check for success
+    if (mysqli_stmt_execute($stmt)) {
         echo "Course '$course_name' inserted successfully.<br>";
     } else {
-        echo "Error inserting course '$course_name': " . mysqli_error($conn) . "<br>";
+        error_log("Error inserting course '$course_name': " . mysqli_error($conn));
+        echo "Error inserting course '$course_name'. Please try again later.<br>";
     }
 }
+
+// Close the prepared statement
+mysqli_stmt_close($stmt);
 
 // Create the `announcements` table
 $sql = "CREATE TABLE IF NOT EXISTS announcements (
@@ -204,13 +221,13 @@ $sql = "CREATE TABLE IF NOT EXISTS announcements (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 )";
-
-if (mysqli_query($conn, $sql)) {
+if (executeQuery($conn, $sql)) {
     echo "Table 'announcements' created successfully.<br>";
 } else {
-    echo "Error creating table 'announcements': " . mysqli_error($conn);
+    echo "Error creating table 'announcements'. Please try again later.<br>";
 }
 
 // Close the connection when done
 mysqli_close($conn);
 ?>
+
