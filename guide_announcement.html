@@ -92,7 +92,7 @@
 
   <script>
     // Fetch the announcements
-    fetch('fetch_announcement.php') // Ensure correct path to PHP script
+fetch('fetch_announcement.php')
   .then(response => response.json())
   .then(announcements => {
     const container = document.getElementById('announcementsContainer');
@@ -102,15 +102,30 @@
       announcements.forEach(announcement => {
         const card = document.createElement('div');
         card.className = 'pg-announcement-card';
-        card.innerHTML = `
-          <h4><strong>${announcement.title}</strong></h4>
-          <p>${announcement.description}</p>
-          <p><small>Posted on: ${announcement.created_at}</small></p>
-        `;
+
+        const title = document.createElement('h4');
+        const strong = document.createElement('strong');
+        strong.textContent = announcement.title;
+        title.appendChild(strong);
+
+        const description = document.createElement('p');
+        description.textContent = announcement.description;
+
+        const createdAt = document.createElement('p');
+        const small = document.createElement('small');
+        small.textContent = `Posted on: ${announcement.created_at}`;
+        createdAt.appendChild(small);
+
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(createdAt);
+
         container.appendChild(card);
       });
     } else {
-      container.innerHTML = '<p>No new announcements.</p>';
+      const message = document.createElement('p');
+      message.textContent = 'No new announcements.';
+      container.appendChild(message);
     }
   })
   .catch(err => console.error('Error loading announcements:', err));
