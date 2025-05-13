@@ -9,17 +9,22 @@ include('db_connection.php');
 if (isset($_GET['id'])) {
     $guide_id = $_GET['id'];
 
-    // Delete the guide from the database
-    $delete_query = "DELETE FROM park_guides WHERE id = $guide_id";
-    
-    if ($conn->query($delete_query) === TRUE) {
+    // Prepare the delete statement to prevent SQL Injection
+    $stmt = $conn->prepare("DELETE FROM park_guides WHERE id = ?");
+    $stmt->bind_param("i", $guide_id); // "i" = integer
+
+    if ($stmt->execute()) {
         echo "Park guide deleted successfully.";
-        header('Location: displayUserFeedback.php'); // Redirect back to the list of guides
+        header('Location: displayUserFeedback.php');
+        exit;
     } else {
-        echo "Error: " . $conn->error;
+        echo "Error: " . $stmt->error;
     }
+
+    $stmt->close();
 } else {
     echo "Guide ID not provided.";
     exit;
 }
+
 ?>
