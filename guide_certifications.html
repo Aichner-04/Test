@@ -162,44 +162,59 @@
   <script>
     // Fetch notifications from the PHP endpoint
     fetch('get_notifications.php')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json(); // Parse JSON response
-    })
-    .then(notifications => {
-        console.log(notifications); // Log the notifications to the console
+  .then(response => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(notifications => {
+    console.log(notifications);
 
-        const container = document.getElementById('notificationsContainer');
-        container.innerHTML = ''; // Clear any existing content
+    const container = document.getElementById('notificationsContainer');
+    container.innerHTML = ''; // Clear previous content
 
-        if (notifications.length === 0) {
-            container.innerHTML = '<p class="empty-message">No new notifications.</p>';
-            return;
-        }
+    if (notifications.length === 0) {
+        const emptyMsg = document.createElement('p');
+        emptyMsg.className = 'empty-message';
+        emptyMsg.textContent = 'No new notifications.';
+        container.appendChild(emptyMsg);
+        return;
+    }
 
-        // Loop through notifications and create notification cards
-        notifications.forEach(notif => {
-            const message = notif.message || 'No message available';
-            const createdAt = notif.created_at ? `Received on: ${notif.created_at}` : 'Date not provided';
+    notifications.forEach(notif => {
+        const message = notif.message || 'No message available';
+        const createdAt = notif.created_at ? `Received on: ${notif.created_at}` : 'Date not provided';
 
-            const card = document.createElement('div');
-            card.className = 'notification-card';  // Add styling class
+        const card = document.createElement('div');
+        card.className = 'notification-card';
 
-            card.innerHTML = `
-                <p><strong>${message}</strong></p>
-                <p><em>${createdAt}</em></p>
-            `;
-            container.appendChild(card);
-        });
-    })
-    .catch(error => {
-        console.error('Error fetching notifications:', error);
+        const msgElem = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = message;
+        msgElem.appendChild(strong);
 
-        const container = document.getElementById('notificationsContainer');
-        container.innerHTML = `<p class="error-message">Failed to load notifications. Please try again later.</p>`;
+        const dateElem = document.createElement('p');
+        const em = document.createElement('em');
+        em.textContent = createdAt;
+        dateElem.appendChild(em);
+
+        card.appendChild(msgElem);
+        card.appendChild(dateElem);
+
+        container.appendChild(card);
     });
+  })
+  .catch(error => {
+    console.error('Error fetching notifications:', error);
+
+    const container = document.getElementById('notificationsContainer');
+    const errorMsg = document.createElement('p');
+    errorMsg.className = 'error-message';
+    errorMsg.textContent = 'Failed to load notifications. Please try again later.';
+    container.appendChild(errorMsg);
+  });
+
 </script>
 <script src="scripts2.js"></script>
 </body>
